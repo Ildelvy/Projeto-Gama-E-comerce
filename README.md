@@ -53,11 +53,4 @@ Quais os entregáveis desse desafio?
 
 ## Screenshots
 
-## Autores
-
-- [@Gusdevr](https://github.com/Gusdevr)
-
-## Contribuidores
-
-- [@EduardoPezzi01](https://github.com/EduardoPezzi01)
 
