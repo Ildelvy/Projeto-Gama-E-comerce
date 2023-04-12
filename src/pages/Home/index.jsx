@@ -1,6 +1,7 @@
 
 import { useState } from 'react'
 
+
 import LogoPng from '../../assets/img/logo.png' 
 import React from 'react'
 import { FaBars} from "react-icons/fa"
@@ -46,8 +47,12 @@ ArticleProductD
 
 
 const Home = () => {
+  
+
+
  const [openModal, setOpenModal] = useState(false)
-  return (
+  
+ return (
     
     <ContainerHome>
         
@@ -93,7 +98,7 @@ const Home = () => {
 
 
     <LogHeader>
-            <img src={LogoPng} />
+           <a href='/' > <img src={LogoPng} /> </a>
         </LogHeader>
 
     <ContainerInput>
@@ -102,7 +107,8 @@ const Home = () => {
     </ContainerInput>
 
     <span>
-    <p>Faça <a href="http://localhost:3000/login">login</a> ou<br /> crie seu <a href="#">cadastro</a> </p>
+    <p>Faça <a href="http://localhost:3000/login">login</a> ou 
+    <br /> crie seu <a href="/cadastro">cadastro</a> </p>
     </span>
 
     <div style={{color:'darkgrey',position:'absolute', left:'88%', top:'4%', 
