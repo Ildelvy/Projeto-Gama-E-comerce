@@ -1,4 +1,4 @@
-# ProjetoFinalGama #47 Grupo 4:
+# ProjetoFinalGama #47 Grupo 1:
 
 O projeto a ser desenvolvido é um MVP de ecommerce com o
 intuito de colocarmos em prática todo o conhecimento
@@ -55,6 +55,9 @@ Quais os entregáveis desse desafio?
 
 ## Autores
 
-- [@EduardoPezzi01](https://github.com/EduardoPezzi01)
 - [@Gusdevr](https://github.com/Gusdevr)
+
+## Contribuidores
+
+- [@EduardoPezzi01](https://github.com/EduardoPezzi01)
 
