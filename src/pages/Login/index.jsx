@@ -1,6 +1,8 @@
+import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import React from 'react'
 import LogoPng from '../../assets/img/logo.png' 
-
+import axios from 'axios'
 
 import { 
   ContainerLogin, 
@@ -15,27 +17,51 @@ from '../Login/styles'
 
 import { LogHeader } from "../Home/styles"
 
+
 const Login = () => {
+  const [emailUser, setEmailUser] = useState('')
+  const [passwordUser, setPasswordUser] = useState('')
+  const navigate = useNavigate()
+
+  function handleSubmitLogin(event) {
+    event.preventDefault()
+    if (emailUser.length === 0 || passwordUser.length === 0) {
+      alert('Digite seu usuário e senha!')
+    }else {
+      const loginData = { email: emailUser, password: passwordUser }
+      axios.post('https://api-ecommerce-gamaxp47.herokuapp.com/login', loginData)
+        .then(response => {
+          localStorage.setItem('token', response.data.token)
+          localStorage.setItem('user', response.data.nome)
+          localStorage.setItem('userType', response.data.tipo)
+      
+        })
+        navigate('/')
+    }
+    
+
+  }
+
   return (
 
     <ContainerLogin>
     <header>
    
  <LogHeader>
-            <img src={LogoPng} />
+           <a href='/'> <img src={LogoPng} /> </a>
         </LogHeader>
        
         
     </header>
 
-    <FormLogin>
+    <FormLogin onSubmit={handleSubmitLogin}>
 
       <h1>fazer login</h1>
       <ContainerInput>
-      <input type='text' placeholder='Email' />
+      <input type='text' placeholder='Email' onChange={e => setEmailUser(e.target.value)} value={emailUser}/>
       </ContainerInput>
       <ContainerInput>
-        <input type='password' placeholder='Senha'/>
+        <input type='password' placeholder='Senha' onChange={e => setPasswordUser(e.target.value)} value={passwordUser}/>
       </ContainerInput>
 
         <ContainerButtons>
@@ -49,7 +75,14 @@ const Login = () => {
     </FormLogin>
 
 
+    <footer>
+     
+
+    </footer>
+
     </ContainerLogin>
+
+   
 
   
   )

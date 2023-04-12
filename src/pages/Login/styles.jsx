@@ -3,6 +3,14 @@ import styled from 'styled-components'
 export const ContainerLogin = styled.div`
    
     align-items: center;
+
+    footer {    
+        background-color:#114871 ;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        padding: 30px;
+    }
    
 
 `
